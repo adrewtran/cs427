@@ -117,6 +117,65 @@ footer {
     margin-top: 20px;
 }
 
+/* Contact section styling */
+#contact {
+    border-left: 4px solid #e01717;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+#contact h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+#contact p {
+    margin-bottom: 10px;
+}
+
+#contact a {
+    color: #0066cc;
+    font-weight: bold;
+}
+
+#contact a:hover {
+    color: #004080;
+}
+
+#contact form {
+    margin-top: 20px;
+}
+
+#contact input,
+#contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+#contact textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+#contact button[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#contact button[type="submit"]:hover {
+    background-color: #e01717;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     nav ul {
