@@ -84,7 +84,6 @@ exercise3.add_movie_in_genre('action', { id: '3', title: 'Inception' });
 exercise3.add_movie_in_genre('action', { id: '4', title: 'Mad Max' });
 // add console.log to check if the movie is added successfully
 console.log(exercise3.add_movie_in_genre('action', { id: '4', title: 'Mad Max' })); // Should return false (duplicate ID)
-console.log(exercise3.add_movie_in_genre('action', { id: '5', title: 'Inception' })); // Should return false (duplicate ID)
 
 // Updating movie title
 exercise3.update_movie_title_by_genre_and_movie_id('thriller', '1', 'The American (Updated)');
