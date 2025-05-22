@@ -95,28 +95,23 @@ If you prefer to set things up manually, follow these steps:
    npm run build
    ```
 
-5. Initialize the database:
-   ```bash
-   npm run initdb
-   ```
-
-6. Start the backend server:
+5. Start the backend server:
    ```bash
    npm run dev
    ```
    The server will be running at http://localhost:5000
 
-7. Open a new terminal window and navigate to the frontend directory:
+6. Open a new terminal window and navigate to the frontend directory:
    ```bash
    cd ../frontend
    ```
 
-8. Install dependencies:
+7. Install dependencies:
    ```bash
    npm install
    ```
 
-9. Start the frontend development server:
+8. Start the frontend development server:
    ```bash
    npm run dev
    ```
