@@ -34,7 +34,7 @@ This is the backend service for the Product Review Platform, featuring AI-powere
    PORT=3001
    ```
 
-3. **Initialize the database**:
+3. **Initialize the database (creates the database if it doesn't exist and runs all schema migrations)**:
    ```
    npm run initdb
    ```
@@ -49,6 +49,29 @@ This is the backend service for the Product Review Platform, featuring AI-powere
    npm run dev
    ```
 
+## Database Migrations
+
+This project uses Knex.js to manage database schema changes. Migration files are located in the `db/migrations` directory and seed files for sample/test data are in `db/seeds`.
+
+### Key Commands:
+
+*   **`npm run initdb`**: Ensures the database specified in your `.env` file is created and then runs all pending schema migrations. This is the standard command to get your database schema up to date.
+*   **`npm run knex:migrate:make <migration_name>`**: Creates a new migration file. Replace `<migration_name>` with a descriptive name for your migration (e.g., `add_user_email_column`).
+    ```bash
+    # Example:
+    npm run knex:migrate:make add_user_email_column
+    ```
+*   **`npm run knex:migrate:latest`**: Applies all pending migrations. `initdb` already includes this.
+*   **`npm run knex:migrate:rollback`**: Reverts the last batch of applied migrations.
+*   **`npm run knex:seed:make <seed_name>`**: Creates a new seed file.
+    ```bash
+    # Example:
+    npm run knex:seed:make sample_users
+    ```
+*   **`npm run knex:seed:run`**: Runs all seed files to populate the database with sample or initial data. This is useful for development and testing. *Note: The initial sample data for products and categories is now handled by a seed file and can be run with this command.*
+
+When you create a new migration, you will need to edit the generated file in `db/migrations/` to define the schema changes in the `up()` method (to apply the change) and `down()` method (to revert the change).
+
 ## Sentiment Analysis
 
 The platform analyzes the sentiment of product reviews automatically when they are created or updated. This is done using:
@@ -62,6 +85,7 @@ Each review receives:
 
 ### Migrating Existing Reviews
 
+For populating sentiment data for existing reviews (a data migration task distinct from schema migrations):
 To add sentiment analysis to existing reviews that don't have sentiment data:
 
 ```
