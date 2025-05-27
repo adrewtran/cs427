@@ -42,7 +42,7 @@ If you prefer to use an existing MySQL installation:
 2. Create a database named `product_reviews_db` (or customize the name in your `.env` file)
 3. Make note of your MySQL credentials as you'll need them for the `.env` file
 
-Be sure to update the database configuration in the backend `.env` file to match your local MySQL setup.
+Be sure to update the database configuration in the backend `.env` file to match your local MySQL setup. Once the database server is running and the backend `.env` file is configured, you'll need to run database migrations from the `backend` directory to set up the schema (see Backend Setup).
 
 ## 🚀 Quick Start
 
@@ -89,6 +89,11 @@ If you prefer to set things up manually, follow these steps:
    NODE_ENV=development
    ```
    > ⚠️ **Important**: Make sure your database credentials match your actual MySQL setup (local or Docker)
+
+3a. Initialize the database (this creates the database if it doesn't exist and runs schema migrations):
+   ```bash
+   npm run initdb
+   ```
 
 4. Build the backend:
    ```bash
